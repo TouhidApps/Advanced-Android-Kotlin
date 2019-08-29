@@ -1,0 +1,9 @@
+Retrofit
+RX-Java
+ViewModel
+LiveData
+DataBinding
+Paging Library
+
+MVVM
+

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+<!--        <variable-->
+<!--            name="footerMessage"-->
+<!--            type="String" />-->
+
+        <variable
+            name="progressVisible"
+            type="Boolean" />
+
+        <variable
+            name="footerTextVisible"
+            type="Boolean" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <ProgressBar
+            android:id="@+id/progressBarFooter"
+            android:visibility="@{progressVisible ? View.GONE : View.VISIBLE}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/textViewFooterMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:gravity="center"
+            android:visibility="@{footerTextVisible ? View.GONE : View.VISIBLE}"
+            android:text="ERROR !! Tap to retry." />
+<!--        @{footerMessage, default=`-->
+
+    </RelativeLayout>
+
+</layout>
