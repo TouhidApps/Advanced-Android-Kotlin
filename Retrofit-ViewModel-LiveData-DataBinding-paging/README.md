@@ -1,1 +1,1 @@
-# Retrofit + RX-Java + ViewModel + LiveData + Repository + DataBinding + Paging
+# Retrofit + RX-Java + ViewModel + LiveData + Repository + DataBinding + Paging (MVVM)
