@@ -12,11 +12,13 @@
         android:layout_height="match_parent"
         tools:context=".view.MainActivity">
 
+
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipeRefreshLayoutFlower"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewInfo"
+            android:layout_marginBottom="70dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -42,13 +44,26 @@
 
         <TextView
             android:id="@+id/textViewRecyclerError"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="ERROR !! Tap to retry."
+            app:layout_constraintBottom_toBottomOf="@+id/swipeRefreshLayoutFlower"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MainActivity with: Retrofit, RX-Java, ViewModel, LiveData, DataBinding, Paging"
+            android:textSize="20sp"
+            android:id="@+id/textViewInfo"
             android:gravity="center"
-            android:text="ERROR !! Tap to retry." />
+            android:background="#fff"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

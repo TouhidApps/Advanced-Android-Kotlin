@@ -22,7 +22,7 @@ object RetrofitClient {
                 .build()
 
             retrofit = Retrofit.Builder()
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) // verifies we are using RxJava2 for this API call
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .baseUrl(MyApiUrl.BASE_URL)
                 .client(okHttpClient)

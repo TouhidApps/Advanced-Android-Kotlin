@@ -26,8 +26,8 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    dataBinding{
-        enabled=true
+    dataBinding {
+        enabled = true
     }
 }
 
@@ -64,7 +64,6 @@ dependencies {
 
     // Paging Library
     implementation 'android.arch.paging:runtime:2.0.0'
-
 
 
 }

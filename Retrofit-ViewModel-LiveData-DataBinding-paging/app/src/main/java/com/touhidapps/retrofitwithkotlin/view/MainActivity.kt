@@ -1,5 +1,6 @@
 package com.touhidapps.retrofitwithkotlin.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -18,9 +19,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private var mainActivityViewModel: MainActivityViewModel? = null
     private var activityMainBinding: ActivityMainBinding? = null
-//    private var movies = ArrayList<MovieModel>()
+    private var mainActivityViewModel: MainActivityViewModel? = null
+    //    private var movies = ArrayList<MovieModel>()
 //    private var tempPageNo = 1
     var flowerListAdapter: FlowerListAdapter? = null
 
@@ -30,6 +31,8 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         mainActivityViewModel = ViewModelProviders.of(this).get(MainActivityViewModel::class.java)
+
+
 
 //        activityMainBinding?.recyclerViewFlower?.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
@@ -85,6 +88,12 @@ class MainActivity : AppCompatActivity() {
         mainActivityViewModel!!.dataList.observe(this, Observer {
             flowerListAdapter?.submitList(it)
         })
+        flowerListAdapter?.setItemAction {
+            println("Clicked: ${it.contentTitle}")
+            var i = Intent(this, DetailsActivity::class.java)
+          //  i.putExtra("ITEM_ID", it.contentCode)
+            startActivity(i)
+        }
     }
 
     private fun initState() {
@@ -97,9 +106,6 @@ class MainActivity : AppCompatActivity() {
                 flowerListAdapter?.setState(state ?: LoadingState.DONE)
             }
         })
-
-
-
     }
 
 //    private fun loadData(page: Int) {

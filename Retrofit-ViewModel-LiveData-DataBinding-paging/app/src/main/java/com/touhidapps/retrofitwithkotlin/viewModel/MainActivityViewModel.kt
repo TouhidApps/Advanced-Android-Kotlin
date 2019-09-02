@@ -11,7 +11,6 @@ import com.touhidapps.retrofitwithkotlin.adapter.dataSource.FlowerDataSourceFact
 import com.touhidapps.retrofitwithkotlin.model.MovieModel
 import com.touhidapps.retrofitwithkotlin.myEnum.LoadingState
 import com.touhidapps.retrofitwithkotlin.networkService.RetrofitClient
-import com.touhidapps.retrofitwithkotlin.networkService.RetrofitInterface
 import io.reactivex.disposables.CompositeDisposable
 
 class MainActivityViewModel(application: Application) : AndroidViewModel(application) {
@@ -27,7 +26,7 @@ class MainActivityViewModel(application: Application) : AndroidViewModel(applica
 
     var dataList: LiveData<PagedList<MovieModel>>
     private val compositeDisposable = CompositeDisposable()
-    private val pageSize = 5
+    private val pageSize = 10
     private val flowerDataSourceFactory: FlowerDataSourceFactory
 
     init {
