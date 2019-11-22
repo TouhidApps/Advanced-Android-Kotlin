@@ -2,6 +2,7 @@ package com.touhidapps.retrofitwithkotlin.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -25,9 +26,13 @@ class MainActivity : AppCompatActivity() {
 
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        activityMainBinding?.recyclerViewFlower?.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+        activityMainBinding?.recyclerViewFlower?.layoutManager =
+            LinearLayoutManager(this, RecyclerView.VERTICAL, false)
 
         val flowerListAdapter = FlowerListAdapter(movies)
+        flowerListAdapter.setItemClick {
+            Toast.makeText(this, "Item Clicked ${it.contentTitle}", Toast.LENGTH_SHORT).show()
+        }
         activityMainBinding?.recyclerViewFlower?.adapter = flowerListAdapter
 
         mainActivityViewModel = ViewModelProviders.of(this).get(MainActivityViewModel::class.java)

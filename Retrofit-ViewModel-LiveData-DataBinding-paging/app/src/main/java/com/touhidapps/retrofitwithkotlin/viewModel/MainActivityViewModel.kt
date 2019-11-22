@@ -15,18 +15,11 @@ import io.reactivex.disposables.CompositeDisposable
 
 class MainActivityViewModel(application: Application) : AndroidViewModel(application) {
 
-//    var movieRepository = MovieRepository(application)
-//
-//    fun getAllMovies(pageNo: Int) {
-//        movieRepository.loadData(pageNo)
-//    }
-
-
     private val retrofitClient = RetrofitClient.instance()!!
 
     var dataList: LiveData<PagedList<MovieModel>>
     private val compositeDisposable = CompositeDisposable()
-    private val pageSize = 10
+    private val pageSize = 10 // 20
     private val flowerDataSourceFactory: FlowerDataSourceFactory
 
     init {

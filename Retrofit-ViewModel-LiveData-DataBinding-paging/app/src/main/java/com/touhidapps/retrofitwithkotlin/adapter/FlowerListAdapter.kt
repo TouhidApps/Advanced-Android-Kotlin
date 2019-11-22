@@ -27,7 +27,6 @@ class FlowerListAdapter(private val retry: () -> Unit) :
         this.itemAction = action
     }
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
         return if (viewType == DATA_VIEW_TYPE) {
@@ -57,19 +56,15 @@ class FlowerListAdapter(private val retry: () -> Unit) :
 
             // retry
             if (state == LoadingState.ERROR) {
-                println("ttt-- 3 ")
                 (holder as MyFooterViewHolder).mBinding.footerTextVisible = false
             } else {
-                println("ttt-- 4 ")
                 (holder as MyFooterViewHolder).mBinding.footerTextVisible = true
             }
 
             // loading
             if (state == LoadingState.LOADING) {
-                println("ttt-- 1 ")
                 (holder as MyFooterViewHolder).mBinding.progressVisible = false
             } else {
-                println("ttt-- 2 ")
                 (holder as MyFooterViewHolder).mBinding.progressVisible = true
             }
 
@@ -107,7 +102,9 @@ class FlowerListAdapter(private val retry: () -> Unit) :
 
         init {
             itemAction?.let {
-                itemView.setOnClickListener { it(getItem(adapterPosition)!!) }
+                itemView.setOnClickListener {
+                    it(getItem(adapterPosition)!!)
+                }
             }
         }
 

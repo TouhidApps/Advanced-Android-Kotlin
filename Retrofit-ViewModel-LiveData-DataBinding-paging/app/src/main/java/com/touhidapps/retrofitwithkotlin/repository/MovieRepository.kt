@@ -11,7 +11,7 @@ import io.reactivex.schedulers.Schedulers
 class MovieRepository(var application: Application) {
 
 
-    // not used because of paging library
+    // Not used because of paging library
     fun loadData(id: String, action: (ServiceModel) -> Unit) {
 
 //        val rBody = HashMap<String, Any>()

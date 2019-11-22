@@ -18,7 +18,6 @@ class FlowerDataSource(private val retrofitInterface: RetrofitInterface, private
 
     var state: MutableLiveData<LoadingState> = MutableLiveData()
     private var retryCompletable: Completable? = null
-//    var movieRepository = MovieRepository(application)
 
 
     override fun loadInitial(params: LoadInitialParams<Int>, callback: LoadInitialCallback<Int, MovieModel>) {
@@ -29,7 +28,6 @@ class FlowerDataSource(private val retrofitInterface: RetrofitInterface, private
         rBody["PageTotal"] = "1"
 
         println("Sending0: $rBody")
-//        params.requestedLoadSize
 
         compositeDisposable.add(
             retrofitInterface.getMovieList(rBody).subscribe(
@@ -62,12 +60,10 @@ class FlowerDataSource(private val retrofitInterface: RetrofitInterface, private
             retrofitInterface.getMovieList(rBody)
                         .subscribe(
                                 { response ->
-                                    println("ERRRR 0: ")
                                     updateState(LoadingState.DONE)
                                     callback.onResult(response, params.key + 1)
                                 },
                                 {
-                                    println("ERRRR 2: ")
                                     updateState(LoadingState.ERROR)
                                     setRetry(Action { loadAfter(params, callback) })
                                 }

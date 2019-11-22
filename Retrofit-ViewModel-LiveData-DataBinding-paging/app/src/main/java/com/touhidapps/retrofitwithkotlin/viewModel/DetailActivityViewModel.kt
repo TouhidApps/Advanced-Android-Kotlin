@@ -3,7 +3,6 @@ package com.touhidapps.retrofitwithkotlin.viewModel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.touhidapps.retrofitwithkotlin.model.MovieModel
 import com.touhidapps.retrofitwithkotlin.model.ServiceModel
 import com.touhidapps.retrofitwithkotlin.repository.MovieRepository
 
