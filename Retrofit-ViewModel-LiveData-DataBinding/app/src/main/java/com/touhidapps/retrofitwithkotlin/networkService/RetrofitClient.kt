@@ -1,4 +1,4 @@
-package com.touhidapps.retrofitwithkotlin.service
+package com.touhidapps.retrofitwithkotlin.networkService
 
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient

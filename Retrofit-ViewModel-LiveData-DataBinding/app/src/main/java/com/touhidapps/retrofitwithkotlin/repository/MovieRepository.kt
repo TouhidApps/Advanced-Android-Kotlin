@@ -4,7 +4,7 @@ import android.app.Application
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import com.touhidapps.retrofitwithkotlin.model.MovieModel
-import com.touhidapps.retrofitwithkotlin.service.RetrofitClient
+import com.touhidapps.retrofitwithkotlin.networkService.RetrofitClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
